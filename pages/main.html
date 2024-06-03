@@ -1,51 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1,
-shrink-to-fit=no">
-	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Загрузите любой файл</title>
+	<script src="../web3.min.js"></script>
+	<script src="../app.js" defer></script>
+	<link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 <div class="container">
-	<div class="row">
-		<div class="col-md-6 offset-md-3 text-xs-center">
-			<br>
-			<h3>Upload any file</h3>
-			<br>
-			<div>
-				<div class="form-group">
-					<label class="custom-file text-xs-left">
-						<input type="file" id="file" class="customfileinput">
-						<span class="custom-file-control"></span>
-					</label>
-				</div>
-				<div class="form-group">
-					<label for="owner">Введите имя владельца</label>
-					<input type="text" class="form-control"
-					       id="owner">
-				</div>
-				<button onclick="submit()" class="btn btnprimary">Submit</button>
-				<button onclick="getInfo()" class="btn btnprimary">Get Info</button>
-				<br><br>
-				<div class="alert alert-info" role="alert"
-				     id="message">
-					Вы можете ввести сведения о файле либо получить их.
-				</div>
-			</div>
-		</div>
+	<h2 style="margin-bottom: 20px">Загрузите любой файл</h2>
+	<div style="margin-bottom: 10px">
+		<label for="owner">Введите имя владельца</label>
 	</div>
-	<div class="row">
-		<div class="col-md-6 offset-md-3 text-xs-center">
-			<br>
-			<h3>Транзакции, подтвержденные недавно</h3>
-			<br>
-			<ol id="events_list">Транзакции не найдены</ol>
-		</div>
+	<div class="form-group">
+		<label for="file" class="custom-file" style="margin-bottom: 20px">
+			<input type="text" id="owner" class="form-control">
+			<input type="file" id="file" class="customfileinput">
+			<span id="fileLabel" class="custom-file-control">Загрузить файл</span>
+		</label>
+		<span id="fileName" class="file-name"></span>
 	</div>
+	<button onclick="submit()" class="btn">Отправить</button>
+	<button onclick="getInfo()" class="btn">Получить информацию</button>
+	<div class="alert" id="message" style="margin-bottom: 40px">
+		Вы можете ввести сведения о файле либо получить их.
+	</div>
+	<h3>Транзакции, подтвержденные недавно</h3>
+	<ol id="events_list">Транзакции не найдены</ol>
 </div>
-<script type="text/javascript" src="/js/sha1.min.js"></script>
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/socket.io.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
